@@ -37,7 +37,7 @@ await resend.emails.send({
 
     <p>
       Your request has been successfully submitted on  
-      <strong>abhrabanerjee.com</strong>.  
+      <strong>AbhraBanerjee.com</strong>.  
       Our team will connect with you shortly.
     </p>
 
@@ -93,7 +93,8 @@ await resend.emails.send({
   from: `"AbhraBanerjee.com Notifications" <noreply@abhrabanerjee.com>`,
   to: [
     "abhra.banerjee@cleanomatics.com",
-    "abhra@abhrabanerjee.com"
+    "abhra@abhrabanerjee.com",
+    "bikram@cleanomatics.com"
   ],
   subject: "New Callback Request — AbhraBanerjee.com",
   html: `
