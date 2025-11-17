@@ -10,11 +10,15 @@ export default function CallbackForm() {
     phone: "",
     service: "",
   });
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -52,33 +56,34 @@ export default function CallbackForm() {
       animate={{ opacity: 1 }}
       className="max-w-md mx-auto bg-[#0a0a0f] p-6 rounded-2xl shadow-lg border border-white/10 space-y-6"
     >
-
-      {/* Success / Error Messages */}
+      {/* Success / Error Popup */}
       <AnimatePresence>
         {success && (
           <motion.div
             key="success"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="bg-green-600 text-white p-3 rounded-lg text-center font-semibold"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-green-600 text-white p-4 rounded-xl text-center font-semibold shadow-lg"
           >
-            Thank you! We will contact you soon.
+            ✅ Thank You! Abhra's Team will connect you shortly.
           </motion.div>
         )}
+
         {error && (
           <motion.div
             key="error"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="bg-red-600 text-white p-3 rounded-lg text-center font-semibold"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-red-600 text-white p-4 rounded-xl text-center font-semibold shadow-lg"
           >
             {error}
           </motion.div>
         )}
       </AnimatePresence>
 
+      {/* FORM */}
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name */}
         <div className="relative">
@@ -99,7 +104,7 @@ export default function CallbackForm() {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white"
           />
         </div>
 
@@ -122,7 +127,7 @@ export default function CallbackForm() {
             onChange={handleChange}
             placeholder="Email Address"
             required
-            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white"
           />
         </div>
 
@@ -145,12 +150,13 @@ export default function CallbackForm() {
             onChange={handleChange}
             placeholder="Phone Number"
             required
-            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white"
           />
         </div>
 
-        {/* Services Dropdown */}
+        {/* Service Dropdown */}
         <div className="relative">
+          {/* Left Icon */}
           <svg
             className="absolute left-3 top-3 w-5 h-5 text-gray-400"
             fill="none"
@@ -160,18 +166,34 @@ export default function CallbackForm() {
           >
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
+
+          {/* Right Animated Arrow */}
+          <svg
+            className={`absolute right-3 top-4 w-4 h-4 text-gray-300 transition-all duration-300 ${
+              dropdownOpen ? "rotate-180" : "rotate-0"
+            }`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+
           <select
             name="service"
             value={form.service}
             onChange={handleChange}
+            onFocus={() => setDropdownOpen(true)}
+            onBlur={() => setDropdownOpen(false)}
             required
-            className="w-full pl-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 pr-10 p-3 rounded-lg bg-[#111115] border border-white/20 text-white appearance-none"
           >
             <option value="">Select a Service</option>
             <option value="performance-marketing">Performance Marketing</option>
             <option value="crm-automation">CRM Automation + Martech</option>
             <option value="brand-strategy">Brand Strategy + Creative</option>
-            <option value="content-creative">Content + Creative Production</option>
+            <option value="content-creative">Content + Creative</option>
             <option value="web-development">Web + Tech Development</option>
             <option value="consulting">Consulting</option>
             <option value="marketing">Marketing</option>
@@ -179,7 +201,7 @@ export default function CallbackForm() {
           </select>
         </div>
 
-        {/* Submit */}
+        {/* Submit button */}
         <button
           type="submit"
           disabled={loading}
@@ -187,7 +209,7 @@ export default function CallbackForm() {
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
-          {loading ? "Submitting..." : "Book a Session"}
+          {loading ? "Submitting..." : "Submit Request"}
         </button>
       </form>
     </motion.div>

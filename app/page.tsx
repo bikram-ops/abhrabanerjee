@@ -217,8 +217,8 @@ export default function AbhraBanerjeePage() {
       {/* BRAND LOGOS */}
       <div className="grid grid-cols-3 gap-6 mt-8">
         <img src="/brands/ogilvy_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
-        <img src="/brands/timesmobile_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
-        <img src="/brands/dulux-seeklogo.png" className="opacity-80 hover:opacity-100 transition" />
+        <img src="/brands/havells.jpg" className="opacity-80 hover:opacity-100 transition" />
+        <img src="/brands/dulux.jpg" className="opacity-80 hover:opacity-100 transition" />
         <img src="/brands/century_plyboards_i_limited_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
         <img src="/brands/dalmia_cement_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
         <img src="/brands/cleanomatics_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
@@ -593,7 +593,7 @@ export default function AbhraBanerjeePage() {
       className="flex justify-center w-full"
     >
       <img
-        src="/images/award.png"
+        src="/images/Award.JPG"
         alt="Awards & Recognition"
         className="w-full max-w-lg rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-transform duration-500"
       />
@@ -601,61 +601,141 @@ export default function AbhraBanerjeePage() {
 
   </div>
 </section>
-
-
-     {/* ✅ SERVICES */}
-<Section id="services">
+{/* ✅ SERVICES SECTION */}
+<Section
+  id="services"
+  className="py-20"
+>
   <motion.h2
     variants={fadeUp}
     initial="hidden"
     whileInView="show"
-    className="text-4xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
+    className="text-4xl font-extrabold mb-14 text-center 
+    text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
   >
-    How I Help
+    How Abhra Helps Businesses Grow
   </motion.h2>
 
-  <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
     {[
       {
-        title: "Fractional CMO",
-        icon: <Briefcase className="w-10 h-10 text-cyan-400 mb-4" />,
-        bullets: [
-          "Strategy + creative + analytics",
-          "CAC ↓ LTV ↑",
-          "Team enablement & handoff",
+        title: "Virtual CMO + Business Growth",
+        problem: [
+          "Unclear marketing direction",
+          "High CAC, low-quality leads",
+          "No alignment across teams",
         ],
+        solution: [
+          "End-to-end growth strategy",
+          "Fixing funnel leaks",
+          "Cross-team alignment & KPIs",
+        ],
+        outcome: "Predictable and scalable revenue systems.",
       },
       {
-        title: "Martech & CRM",
-        icon: <BarChart3 className="w-10 h-10 text-cyan-400 mb-4" />,
-        bullets: [
-          "Zoho/Bigin stacks",
-          "Lead scoring → automation",
-          "Revenue dashboards",
+        title: "Martech, CRM & Automation",
+        problem: [
+          "No lead tracking or follow-ups",
+          "Manual operations slow growth",
+          "No visibility on performance",
         ],
+        solution: [
+          "CRM setup",
+          "Sales & marketing automation",
+          "Dashboards & analytics",
+        ],
+        outcome: "Faster conversions with zero operational chaos.",
       },
       {
-        title: "Workshops & Mentoring",
-        icon: <Users className="w-10 h-10 text-cyan-400 mb-4" />,
-        bullets: [
-          "Brand → Digital evolution",
-          "CRM practice setup",
-          "Growth playbooks",
+        title: "Brand Building & Personal Branding",
+        problem: [
+          "Low brand recall",
+          "Weak identity or positioning",
+          "Crowded & competitive category",
         ],
+        solution: [
+          "Brand narrative + positioning",
+          "Digital identity & communication",
+          "Celebrity/industry-driven branding",
+        ],
+        outcome: "High trust and premium brand perception.",
       },
-    ].map((c, i) => (
-      <Card
+      {
+        title: "GTM Strategy & Omni-Channel Growth",
+        problem: [
+          "No clarity on best channels",
+          "Poor launch outcomes",
+          "Weak market penetration",
+        ],
+        solution: [
+          "Disruptive GTM design",
+          "Channel acquisition planning",
+          "Competition & category mapping",
+        ],
+        outcome: "Strong multi-channel presence and pipeline.",
+      },
+      {
+        title: "HR, Leadership & Organization Systems",
+        problem: [
+          "Unstructured HR processes",
+          "Low team motivation",
+          "No KPIs, KRAs or performance system",
+        ],
+        solution: [
+          "Talent + success planning",
+          "KPI/KRA frameworks",
+          "PMS, R&R & culture building",
+        ],
+        outcome: "A motivated team that drives revenue growth.",
+      },
+      {
+        title: "Growth Hacking & Scaling",
+        problem: [
+          "Stagnant or slow growth",
+          "No innovative experiments",
+          "Overdependence on one channel",
+        ],
+        solution: [
+          "High-ROI growth levers",
+          "Multi-layer acquisition channels",
+          "Retention + loyalty systems",
+        ],
+        outcome: "Compounding long-term business growth.",
+      },
+    ].map((s, i) => (
+      <motion.div
         key={i}
-        className="flex flex-col items-center text-center p-6 hover:shadow-[0_0_25px_rgba(0,200,255,0.15)] transition rounded-2xl bg-white/5 backdrop-blur-md border border-white/10"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="p-6 rounded-2xl bg-white/5 backdrop-blur-xl 
+        border border-white/10 hover:shadow-[0_0_25px_rgba(0,200,255,0.15)]
+        transition"
       >
-        {c.icon}
-        <h3 className="font-bold mb-3 text-lg text-white">{c.title}</h3>
-        <ul className="list-disc text-left ml-5 opacity-80 text-sm text-gray-300">
-          {c.bullets.map((b, idx) => (
-            <li key={idx}>{b}</li>
-          ))}
-        </ul>
-      </Card>
+        <h3 className="font-bold text-xl text-white mb-4">{s.title}</h3>
+
+        <div className="space-y-2 mb-4">
+          <p className="text-sm text-cyan-300 font-semibold">You face:</p>
+          <ul className="list-disc ml-5 text-gray-300 text-sm">
+            {s.problem.map((p, idx) => (
+              <li key={idx}>{p}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="space-y-2 mb-4">
+          <p className="text-sm text-blue-300 font-semibold">Abhra solves by:</p>
+          <ul className="list-disc ml-5 text-gray-300 text-sm">
+            {s.solution.map((p, idx) => (
+              <li key={idx}>{p}</li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="text-sm text-green-300 font-semibold">
+          Outcome: <span className="text-gray-300">{s.outcome}</span>
+        </p>
+      </motion.div>
     ))}
   </div>
 </Section>
