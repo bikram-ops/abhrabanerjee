@@ -638,7 +638,7 @@ export default function AbhraBanerjeePage() {
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
     {[
       {
-        title: "Virtual CMO + Business Growth",
+        title: "Fractional CMO + Business Growth",
         problem: [
           "Unclear marketing direction",
           "High CAC, low-quality leads",
