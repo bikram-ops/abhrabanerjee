@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,12 +41,14 @@ export default function Header() {
         {/* Mobile / CTA */}
         <div className="flex items-center gap-3">
           {/* Mobile Book a Session button */}
-          <Link
-            href="/#cta"
-            className="px-3 py-2 text-sm rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition md:hidden"
-          >
-            Book a Session
-          </Link>
+         <Link
+  href="/#cta"
+  className="px-3 py-2 text-sm rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition md:hidden flex items-center gap-2"
+>
+  <Phone className="w-4 h-4 animate-pulse" />
+  Book a Session
+</Link>
+
 
           {/* Hamburger for Mobile */}
           <button
@@ -57,30 +59,32 @@ export default function Header() {
           </button>
 
           {/* Desktop Book a Session */}
-          <Link
-            href="/#cta"
-            className="hidden md:inline-block px-4 py-2 text-sm rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
-          >
-            Book a Session
-          </Link>
+         <Link
+  href="/#cta"
+  className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
+>
+  <Phone className="w-4 h-4 animate-pulse" />
+  Book a Session
+</Link>
+
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-md absolute w-full left-0 top-full border-t border-white/10 flex flex-col items-center justify-center gap-6 min-h-[calc(100vh-60px)] py-8">
-          {menuItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="text-lg font-medium relative group hover:text-blue-400 transition-colors duration-300"
-            >
-              {item.name}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-400 transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
+{/* Mobile Menu */}
+{isOpen && (
+  <div className="md:hidden fixed inset-0 top-[60px] bg-black/90 backdrop-blur-md border-t border-white/10 
+                  flex flex-col items-center justify-start gap-6 py-10 overflow-y-auto">
+    {menuItems.map((item) => (
+      <Link
+        key={item.name}
+        href={item.href}
+        onClick={() => setIsOpen(false)}
+        className="text-lg font-medium relative group hover:text-blue-400 transition-colors duration-300"
+      >
+        {item.name}
+        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-400 transition-all group-hover:w-full"></span>
+      </Link>
+    ))}
+  </div>
       )}
     </nav>
   );
