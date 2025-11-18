@@ -940,68 +940,68 @@ export default function AbhraBanerjeePage() {
 {/* CTA Section */}
 <section
   id="cta"
-  className="py-24 bg-[#0b0e13]  border-white/10 overflow-x-hidden"
+  className="py-20 bg-[#0b0e13] border-white/10 overflow-x-hidden"
 >
-  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start w-full">
-    
+  <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-start w-full">
+
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+      <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 leading-snug">
         Let’s Build Something Exceptional
       </h2>
 
-      <p className="text-gray-400 text-lg leading-relaxed mb-10">
-        Whether you need marketing, CRM automation, brand strategy, or
-        performance-driven growth - we create solutions that deliver measurable impact.
+      <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+        Whether you need marketing, CRM automation, brand strategy or
+        performance-driven growth — we create solutions that deliver measurable impact.
       </p>
 
-      {/* KEY HIGHLIGHTS */}
-      <div className="space-y-4">
-        {[ 
+      {/* Highlights */}
+      <div className="space-y-3">
+        {[
           "Performance Marketing & Funnels",
           "CRM Automation + Martech",
-          "Brand Strategy + Creative Production"
+          "Brand Strategy + Creative Production",
         ].map((item, i) => (
           <div key={i} className="flex items-center gap-3">
-            <svg width="26" height="26" fill="none" stroke="cyan" strokeWidth="2">
-              <circle cx="13" cy="13" r="12" />
-              <path d="M8 13l3 3 7-7" stroke="cyan" />
+            <svg width="22" height="22" fill="none" stroke="cyan" strokeWidth="2">
+              <circle cx="11" cy="11" r="10" />
+              <path d="M6 11l3 3 6-6" stroke="cyan" />
             </svg>
-            <span className="text-gray-300">{item}</span>
+            <span className="text-gray-300 text-sm md:text-base">{item}</span>
           </div>
         ))}
       </div>
     </div>
 
     {/* RIGHT FORM */}
-    <div className="bg-[#10141d] p-10 rounded-3xl border border-white/10 shadow-xl backdrop-blur-xl w-full">
-      
-      <h3 className="flex items-center text-2xl font-semibold text-white mb-6 gap-3">
-        Get a Callback
+    <div className="bg-[#10141d] p-6 md:p-10 rounded-2xl border border-white/10 shadow-xl backdrop-blur-xl w-full">
 
-        {/* Safe animated SVG wrapper */}
-        <span className="inline-flex overflow-visible">
-          <motion.svg
+      <h3 className="flex items-center text-xl md:text-2xl font-semibold text-white mb-4 gap-3">
+        Get a Callback
+        <motion.span
+          animate={{ rotate: [0, -12, 12, -12, 12, 0] }}
+          transition={{ repeat: Infinity, duration: 1.3, ease: "easeInOut" }}
+          className="inline-flex"
+        >
+          <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-cyan-400"
+            className="w-5 h-5 md:w-6 md:h-6 text-cyan-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
-            animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M3 5a2 2 0 012-2h3a2 2 0 012 2v2a2 2 0 01-.586 1.414l-2 2a16 16 0 006 6l2-2A2 2 0 0115 13h2a2 2 0 012 2v3a2 2 0 01-2 2c-8.837 0-16-7.163-16-16z"
             />
-          </motion.svg>
-        </span>
+          </svg>
+        </motion.span>
       </h3>
 
-      {/* Abhra Contact Info */}
-      <div className="text-gray-300 mb-6 space-y-1">
+      {/* Contact Info */}
+      <div className="text-gray-300 mb-5 space-y-1 text-sm md:text-base">
         <p>
           📧 Email:{" "}
           <a
@@ -1011,7 +1011,6 @@ export default function AbhraBanerjeePage() {
             abhra.banerjee@cleanomatics.com
           </a>
         </p>
-
         <p>
           📞 Phone:{" "}
           <a href="tel:+919874917772" className="text-cyan-400 hover:underline">
@@ -1020,8 +1019,10 @@ export default function AbhraBanerjeePage() {
         </p>
       </div>
 
-      {/* CallbackForm Component */}
-      <CallbackForm />
+      {/* Form */}
+      <div className="scale-[0.97] md:scale-100 transform origin-top">
+        <CallbackForm />
+      </div>
     </div>
   </div>
 </section>
