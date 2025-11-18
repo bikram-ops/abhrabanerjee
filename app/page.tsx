@@ -215,9 +215,16 @@ export default function AbhraBanerjeePage() {
       <h3 className="text-sm tracking-widest text-blue-400 font-semibold mb-2">
         ABHRA'S STORY
       </h3>
-<h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+{/* Mobile Version */}
+<h2 className="md:hidden text-4xl font-bold leading-tight mb-6 text-white">
   <span className="text-gray-200">Corporate Veteran Turned</span> <br />
   <span className="text-blue-400">Silicon Valley Entrepreneur</span>
+</h2>
+
+{/* Desktop Version */}
+<h2 className="hidden md:block text-5xl font-bold leading-tight mb-6 text-white">
+  <span className="text-gray-200">Corporate Veteran Turned Silicon</span> <br />
+  <span className="text-blue-400">Valley Entrepreneur</span>
 </h2>
 
 
@@ -234,7 +241,7 @@ export default function AbhraBanerjeePage() {
       </p>
 
       {/* BRAND LOGOS */}
-      <div className="grid grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-3 gap-6 mt-7">
         <img src="/brands/ogilvy_logo.jpg" className="opacity-80 hover:opacity-100 transition" />
         <img src="/brands/havells.jpg" className="opacity-80 hover:opacity-100 transition" />
         <img src="/brands/dulux.jpg" className="opacity-80 hover:opacity-100 transition" />
