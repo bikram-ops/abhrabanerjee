@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -34,35 +33,35 @@ export default function CaseStudyNavigation() {
       subtitle: "42% Growth in Shelf Share",
       link: "/casestudies/modern-trade",
       icon: "📊",
-      color: "from-cyan-400 to-blue-500",
+      color: ["#22d3ee", "#3b82f6"], // from-cyan-400 to-blue-500
     },
     {
       title: "Aarkay Digital Enablement",
       subtitle: "68% Conversion Increase",
       link: "/casestudies/aarkay",
       icon: "🤖",
-      color: "from-blue-400 to-purple-500",
+      color: ["#60a5fa", "#a855f7"], // from-blue-400 to-purple-500
     },
     {
       title: "Cleanomatics D2C Phygital",
       subtitle: "52% Higher Engagement",
       link: "/casestudies/cleanomatics",
       icon: "📱",
-      color: "from-purple-400 to-pink-500",
+      color: ["#a855f7", "#ec4899"], // from-purple-400 to-pink-500
     },
     {
       title: "B2B ABM Engine",
       subtitle: "3.5× Account Engagement",
       link: "/casestudies/abm",
       icon: "🎯",
-      color: "from-pink-400 to-red-500",
+      color: ["#ec4899", "#ef4444"], // from-pink-400 to-red-500
     },
     {
       title: "Cleanomatics CRM Integration",
       subtitle: "45% Productivity Boost",
       link: "/casestudies/bigin",
       icon: "📞",
-      color: "from-green-400 to-teal-500",
+      color: ["#4ade80", "#14b8a6"], // from-green-400 to-teal-500
     },
   ];
 
@@ -76,14 +75,14 @@ export default function CaseStudyNavigation() {
           viewport={{ once: true }}
           className="relative"
         >
-          {/* Background Gradient Orbs */}
-          <div className="absolute -top-20 -left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+          {/* Floating Gradients */}
+          <div className="absolute -top-20 -left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
 
-          {/* Main Container */}
+          {/* Main Card */}
           <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 
             rounded-3xl shadow-[0_0_40px_rgba(0,150,255,0.08)] p-8 md:p-12">
-            
+
             {/* Header */}
             <div className="text-center mb-10">
               <motion.div
@@ -102,12 +101,13 @@ export default function CaseStudyNavigation() {
                 bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500">
                 Explore Other Case Studies
               </h3>
+
               <p className="text-gray-400 text-lg">
                 Discover more success stories and transformations
               </p>
             </div>
 
-            {/* Case Study Grid */}
+            {/* CASE STUDY GRID */}
             <motion.div
               variants={staggerContainer}
               initial="hidden"
@@ -117,7 +117,7 @@ export default function CaseStudyNavigation() {
             >
               {items.map((item, i) => {
                 const isActive = pathname === item.link;
-                
+
                 return (
                   <motion.div
                     key={i}
@@ -128,68 +128,72 @@ export default function CaseStudyNavigation() {
                     <Link
                       href={item.link}
                       className={`block group relative overflow-hidden rounded-2xl 
-                        ${isActive 
-                          ? 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-cyan-400/50' 
-                          : 'bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20'
-                        } 
+                        ${isActive
+                          ? "bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-cyan-400/50"
+                          : "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20"
+                        }
                         border backdrop-blur-sm transition-all duration-300
                         hover:shadow-[0_0_30px_rgba(0,150,255,0.15)]`}
                     >
-                      {/* Gradient Overlay on Hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 
-                        group-hover:opacity-5 transition-opacity duration-300`} />
 
-                      <div className="relative p-6">
-                        <div className="flex items-start gap-4">
-                          {/* Icon */}
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} 
-                            bg-opacity-10 flex items-center justify-center flex-shrink-0
-                            group-hover:scale-110 transition-transform duration-300`}>
-                            <span className="text-2xl">{item.icon}</span>
-                          </div>
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                        style={{
+                          background: `linear-gradient(to right, ${item.color[0]}, ${item.color[1]})`,
+                        }}
+                      />
 
-                          {/* Content */}
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-lg font-semibold text-white mb-1 
-                              group-hover:text-transparent group-hover:bg-clip-text 
-                              group-hover:bg-gradient-to-r group-hover:${item.color} 
-                              transition-all duration-300">
-                              {item.title}
-                            </h4>
-                            <p className="text-sm text-gray-400 group-hover:text-gray-300 
-                              transition-colors duration-300">
-                              {item.subtitle}
-                            </p>
-                          </div>
+                      <div className="relative p-6 flex items-start gap-4">
 
-                          {/* Arrow Icon */}
-                          <div className="text-gray-500 group-hover:text-cyan-400 
-                            group-hover:translate-x-1 transition-all duration-300">
-                            <svg 
-                              className="w-5 h-5" 
-                              fill="none" 
-                              viewBox="0 0 24 24" 
-                              stroke="currentColor"
-                            >
-                              <path 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round" 
-                                strokeWidth={2} 
-                                d="M9 5l7 7-7 7" 
-                              />
-                            </svg>
-                          </div>
+                        {/* Icon */}
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 
+                          transition-transform duration-300 group-hover:scale-110"
+                          style={{
+                            background: `linear-gradient(to bottom right, ${item.color[0]}, ${item.color[1]})`,
+                            opacity: 0.15,
+                          }}
+                        >
+                          <span className="text-2xl">{item.icon}</span>
                         </div>
 
-                        {/* Active Indicator */}
-                        {isActive && (
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: "100%" }}
-                            className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-                          />
-                        )}
+                        {/* Content */}
+                        <div className="flex-1 min-w-0">
+                          
+                          {/* FIXED TITLE (NO TAILWIND DYNAMIC CLASS) */}
+                          <h4
+                            className="text-lg font-semibold text-white mb-1 group-hover:text-transparent transition-all duration-300"
+                            style={{
+                              backgroundImage: `linear-gradient(to right, ${item.color[0]}, ${item.color[1]})`,
+                              WebkitBackgroundClip: "text",
+                              backgroundClip: "text",
+                            }}
+                          >
+                            {item.title}
+                          </h4>
+
+                          <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                            {item.subtitle}
+                          </p>
+                        </div>
+
+                        {/* Arrow */}
+                        <div className="text-gray-500 group-hover:text-cyan-400 
+                          group-hover:translate-x-1 transition-all duration-300">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </div>
+
+                      {/* Active Indicator */}
+                      {isActive && (
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: "100%" }}
+                          className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                        />
+                      )}
                     </Link>
                   </motion.div>
                 );
@@ -206,8 +210,10 @@ export default function CaseStudyNavigation() {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+              {/* Back Button */}
               <Link
                 href="/"
                 className="group relative inline-flex items-center gap-2 px-8 py-4 
@@ -215,28 +221,19 @@ export default function CaseStudyNavigation() {
                   text-white font-semibold overflow-hidden
                   hover:shadow-[0_0_30px_rgba(0,150,255,0.4)] transition-all duration-300"
               >
-                {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 
                   opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 <span className="relative flex items-center gap-2">
-                  <svg 
-                    className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18" 
-                    />
+                  <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" 
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
                   Back to Home
                 </span>
               </Link>
 
+              {/* CTA Button */}
               <Link
                 href="/#cta"
                 className="group inline-flex items-center gap-2 px-8 py-4 
@@ -248,24 +245,15 @@ export default function CaseStudyNavigation() {
               >
                 <span className="relative flex items-center gap-2">
                   Start Your Transformation
-                  <svg 
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                    />
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </span>
               </Link>
             </div>
 
-            {/* Stats Footer */}
+            {/* Footer Stats */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -273,6 +261,7 @@ export default function CaseStudyNavigation() {
               className="mt-8 pt-8 border-t border-white/10"
             >
               <div className="grid grid-cols-3 gap-4 text-center">
+                
                 <div>
                   <div className="text-2xl font-bold text-transparent bg-clip-text 
                     bg-gradient-to-r from-cyan-300 to-cyan-400">
@@ -280,6 +269,7 @@ export default function CaseStudyNavigation() {
                   </div>
                   <div className="text-sm text-gray-400 mt-1">Case Studies</div>
                 </div>
+
                 <div>
                   <div className="text-2xl font-bold text-transparent bg-clip-text 
                     bg-gradient-to-r from-blue-300 to-blue-400">
@@ -287,6 +277,7 @@ export default function CaseStudyNavigation() {
                   </div>
                   <div className="text-sm text-gray-400 mt-1">Projects Delivered</div>
                 </div>
+
                 <div>
                   <div className="text-2xl font-bold text-transparent bg-clip-text 
                     bg-gradient-to-r from-purple-300 to-purple-400">
@@ -294,8 +285,10 @@ export default function CaseStudyNavigation() {
                   </div>
                   <div className="text-sm text-gray-400 mt-1">Happy Clients</div>
                 </div>
+
               </div>
             </motion.div>
+
           </div>
         </motion.div>
       </div>
