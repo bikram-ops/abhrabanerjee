@@ -111,15 +111,72 @@ export async function POST(req: Request) {
         "bikram@cleanomatics.com",
       ],
       subject: "New Callback Request — AbhraBanerjee.com",
-      html: `
-        <div style="font-family: Arial; padding: 20px; color: #222;">
-          <h2>New Callback Request Received</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Service:</strong> ${service}</p>
+     html: `
+<div style="font-family: Arial, sans-serif; background:#f5f7fa; padding:30px;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+
+    <!-- Title Bar -->
+    <tr>
+      <td style="background:#0A5EB0; padding:22px; text-align:center;">
+        <h1 style="color:#ffffff; margin:0; font-size:20px; letter-spacing:0.4px;">
+          🔔 New Callback Request Received
+        </h1>
+      </td>
+    </tr>
+
+    <!-- Body Content -->
+    <tr>
+      <td style="padding:28px 32px; color:#333; font-size:15px; line-height:1.6;">
+        
+        <p style="margin-bottom:12px;">
+          Hello Team,
+        </p>
+
+        <p style="margin-bottom:20px;">
+          A new callback request has been submitted through  
+          <strong>AbhraBanerjee.com</strong>.  
+          Below are the details:
+        </p>
+
+        <!-- Details Card -->
+        <div style="background:#f0f4ff; padding:18px; border-left:4px solid #0A5EB0; border-radius:8px; margin-bottom:20px;">
+          <p style="margin:6px 0;"><strong>Name:</strong> ${name}</p>
+          <p style="margin:6px 0;"><strong>Email:</strong> ${email}</p>
+          <p style="margin:6px 0;"><strong>Phone:</strong> ${phone}</p>
+          <p style="margin:6px 0;"><strong>Service:</strong> ${service}</p>
         </div>
-      `,
+
+        <p style="margin-top:12px;">
+          Please contact the customer as soon as possible.
+        </p>
+
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="background:#fafafa; padding:20px 15px; text-align:center; font-size:13px; color:#777; border-top:1px solid #eee;">
+        
+        <p style="margin:0 0 10px 0;">
+          This is an automated notification from  
+          <strong>AbhraBanerjee.com Website System</strong>.
+        </p>
+
+        <!-- Footer Logo -->
+        <img 
+          src="https://www.abhrabanerjee.com/logo.png"
+          width="120"
+          alt="Website Logo"
+          style="margin-top:8px; opacity:0.8;"
+        />
+
+      </td>
+    </tr>
+
+  </table>
+</div>
+`,
+
     });
 
     return NextResponse.json({ success: true });
