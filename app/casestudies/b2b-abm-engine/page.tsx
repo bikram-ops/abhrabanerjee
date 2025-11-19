@@ -12,11 +12,6 @@ export default function Page() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { duration: 0.8 } },
-  };
-
   const scaleIn = {
     hidden: { opacity: 0, scale: 0.95 },
     show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -68,7 +63,7 @@ export default function Page() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-            
+
             {/* Floating Metrics */}
             <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-4">
               <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl px-4 py-3 text-center">
@@ -93,7 +88,23 @@ export default function Page() {
             whileInView="show"
             className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
           >
-            {/* Your 4 metric cards here... */}
+            {/* Example Metric Cards */}
+            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 rounded-2xl p-6 text-center">
+              <div className="text-2xl font-bold text-blue-400">500+</div>
+              <div className="text-gray-300 text-sm">Accounts Targeted</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-2xl p-6 text-center">
+              <div className="text-2xl font-bold text-purple-400">120</div>
+              <div className="text-gray-300 text-sm">Webinars Conducted</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 border border-green-400/20 rounded-2xl p-6 text-center">
+              <div className="text-2xl font-bold text-green-400">75%</div>
+              <div className="text-gray-300 text-sm">Lead Conversion</div>
+            </div>
+            <div className="bg-gradient-to-br from-pink-500/10 to-red-500/10 border border-pink-400/20 rounded-2xl p-6 text-center">
+              <div className="text-2xl font-bold text-pink-400">90%</div>
+              <div className="text-gray-300 text-sm">Pipeline Visibility</div>
+            </div>
           </motion.div>
 
           {/* MAIN CARD */}
@@ -101,8 +112,11 @@ export default function Page() {
             rounded-3xl shadow-[0_0_40px_rgba(0,150,255,0.08)]
             p-8 md:p-12 space-y-16">
 
-            {/* CLIENT OVERVIEW, CHALLENGES, SOLUTIONS, IMPACT, CONCLUSION */}
-            {/* Keep all your sections as-is */}
+            {/* Placeholder for Client Overview, Challenges, Solutions, Impact, Conclusion */}
+            <div className="text-gray-300 text-center py-12">
+              <p>Client Overview, Challenges, Solutions, Impact & Conclusion sections go here...</p>
+            </div>
+
           </div>
         </div>
       </section>
