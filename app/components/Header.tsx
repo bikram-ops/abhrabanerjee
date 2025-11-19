@@ -13,7 +13,6 @@ export default function Header() {
     { name: "Notable Awards", href: "/#awards" },
     { name: "Services", href: "/#services" },
     { name: "Case Studies", href: "/#cases" },
-    { name: "Contact", href: "/#cta" },
   ];
 
   return (

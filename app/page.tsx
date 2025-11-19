@@ -636,8 +636,8 @@ export default function AbhraBanerjeePage() {
     variants={fadeUp}
     initial="hidden"
     whileInView="show"
-    className="text-4xl font-extrabold mb-14 text-center 
-    text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
+    className="text-4xl md:text-5xl font-extrabold mb-14 text-center
+               text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
   >
     How Abhra Helps Businesses Grow
   </motion.h2>
@@ -766,59 +766,72 @@ export default function AbhraBanerjeePage() {
   </div>
 </Section>
 
-{/* ✅ CASE STUDIES / WORK SECTION */}
-<section id="cases" className="relative bg-transparent py-24 overflow-hidden">
+{/* ✅ PREMIUM CASE STUDIES SECTION */}
+<section id="cases" className="relative py-24 bg-transparent overflow-hidden">
 
   {/* Heading */}
   <h2
-    className="text-4xl md:text-5xl font-extrabold mb-14 text-center 
+    className="text-4xl md:text-5xl font-extrabold mb-14 text-center
                text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
   >
     Selected Case Studies
   </h2>
 
-  {/* SCROLL WRAPPER */}
-  <div className="relative overflow-hidden scroll-group">
+  {/* Scroll Wrapper */}
+  <div className="relative overflow-hidden group">
 
-    {/* SCROLL ROW */}
-    <div className="flex gap-8 animate-scroll scroll-group-hover:[animation-play-state:paused]">
+    {/* Scroll Row */}
+    <div
+      className="flex gap-10 animate-scroll-premium 
+                 group-hover:[animation-play-state:paused]"
+    >
 
-      {[...Array(2)].flatMap((_, repeatIndex) =>
-        [
+      {[...Array(2)].flatMap((_, repeatIndex) => {
+        const items = [
           {
+            slug: "modern-trade-uplift",
             title: "Modern Trade Uplift",
             img: "/images/case-moderntrade.jpeg",
             summary:
               "Joint business planning + optimized planograms delivering 42% uplift in shelf share.",
           },
           {
+            slug: "digital-enablement-aarkay",
             title: "Digital Enablement – Aarkay",
             img: "/images/case-aarkay.jpg",
             summary:
               "Zoho + AI automation boosted CRM efficiency and improved lead conversions by 68%.",
           },
           {
+            slug: "d2c-phygital-cleanomatics",
             title: "D2C Phygital – Cleanomatics",
             img: "/images/case-cleanomatics.jpg",
             summary:
               "App-first CRM segmentation with hyper-personalized journeys and luxury collaborations.",
           },
           {
+            slug: "b2b-abm-engine",
             title: "B2B ABM Engine",
             img: "/images/case-abm.jpg",
             summary:
               "Account-based funnels with webinar touchpoints, SDR handoff & pipeline intelligence.",
           },
-        ].map((item, i) => (
-          <div key={`${repeatIndex}-${i}`} className="min-w-[350px] cursor-pointer">
+        ];
 
+        return items.map((item, i) => (
+          <Link
+            href={`/casestudies/${item.slug}`}
+            key={`${repeatIndex}-${i}`}
+            className="min-w-[360px] md:min-w-[400px] cursor-pointer select-none block"
+          >
             {/* Card */}
             <div
-              className="relative h-[450px] rounded-3xl overflow-hidden 
+              className="relative h-[480px] rounded-3xl overflow-hidden 
                          border border-white/10 bg-[#101018]/80 backdrop-blur-xl
-                         shadow-[0_0_40px_rgba(0,225,255,0.05)] 
-                         transition-all duration-700 
-                         hover:shadow-[0_0_55px_rgba(0,225,255,0.15)]">
+                         shadow-[0_0_50px_rgba(0,255,255,0.06)]
+                         hover:shadow-[0_0_70px_rgba(0,255,255,0.18)]
+                         transition-all duration-700 group/card"
+            >
 
               {/* Image */}
               <div className="absolute inset-0">
@@ -826,39 +839,65 @@ export default function AbhraBanerjeePage() {
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover 
-                             transition-transform duration-[1200ms] hover:scale-110"
+                             transition-transform duration-[1800ms] 
+                             group-hover/card:scale-110"
                 />
               </div>
 
+              {/* Glass Reflection */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover/card:opacity-100 
+                            transition-all duration-700 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(115deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 40%)",
+                }}
+              />
+
               {/* Text Layer */}
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t 
-                              from-black/70 via-black/30 to-transparent">
+              <div
+                className="absolute bottom-0 inset-x-0 p-7
+                           bg-gradient-to-t from-black/80 via-black/40 to-transparent
+                           backdrop-blur-sm"
+              >
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-300 leading-snug mb-4">
+                <p className="text-sm text-gray-300 leading-snug mb-5">
                   {item.summary}
                 </p>
 
-                {/* Read More Button */}
-                <button
-                  className="px-4 py-2 text-sm rounded-lg bg-cyan-500/20 
+                {/* CTA Button */}
+                <div
+                  className="px-4 py-2 text-sm rounded-lg inline-block
+                             bg-gradient-to-r from-cyan-400/20 to-blue-400/20 
                              text-cyan-300 border border-cyan-400/30 
-                             hover:bg-cyan-500/30 transition"
+                             hover:from-cyan-400/30 hover:to-blue-400/30
+                             transition-all backdrop-blur-md"
                 >
-                  Read Full Case Study →
-                </button>
+                  View Full Case Study →
+                </div>
               </div>
 
             </div>
-          </div>
-        ))
-      )}
+          </Link>
+        ));
+      })}
     </div>
   </div>
+
+  {/* Animation Keyframes */}
+  <style>{`
+    @keyframes scroll-premium {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll-premium {
+      animation: scroll-premium 16s linear infinite;
+    }
+  `}</style>
+
 </section>
-
-
 
 
 <section className="py-24 bg-[#0a0a0f]">
@@ -963,7 +1002,7 @@ export default function AbhraBanerjeePage() {
 
       <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
         Whether you need marketing, CRM automation, brand strategy or
-        performance-driven growth — we create solutions that deliver measurable impact.
+        performance-driven growth - we create solutions that deliver measurable impact.
       </p>
 
       {/* Highlights */}
