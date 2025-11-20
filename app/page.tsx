@@ -473,12 +473,12 @@ export default function AbhraBanerjeePage() {
         NOTABLE AWARDS & RECOGNITION
       </h3>
 
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-10">
-        A Career Marked by Global  
-        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          {" "}Excellence & Impact
-        </span>
-      </h2>
+     <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-10 text-center md:text-left">
+  A Career Marked by Global  
+  <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+    {" "}Excellence & Impact
+  </span>
+</h2>
 
       <ul className="space-y-4 text-gray-300 mt-6">
 
@@ -866,9 +866,12 @@ export default function AbhraBanerjeePage() {
 
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 leading-snug">
-        Let’s Build Something Exceptional
-      </h2>
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text 
+               bg-gradient-to-r from-cyan-300 to-blue-400 leading-snug
+               text-center md:text-left">
+  Let’s Build Something Exceptional
+</h2>
+
 
       <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
         Whether you need marketing, CRM automation, brand strategy or
