@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Briefcase, BarChart3, Users, Rocket, Target, Zap, Award } from "lucide-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PremiumCaseStudies from "./components/PremiumCaseStudies";
 import CallbackForm from "./components/CallbackForm";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -766,138 +767,7 @@ export default function AbhraBanerjeePage() {
   </div>
 </Section>
 
-{/* ✅ PREMIUM CASE STUDIES SECTION */}
-<section id="cases" className="relative py-24 bg-transparent overflow-hidden">
-
-  {/* Heading */}
-  <h2
-    className="text-4xl md:text-5xl font-extrabold mb-14 text-center
-               text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
-  >
-    Selected Case Studies
-  </h2>
-
-  {/* Scroll Wrapper */}
-  <div className="relative overflow-hidden group">
-
-    {/* Scroll Row */}
-    <div
-      className="flex gap-10 animate-scroll-premium 
-                 group-hover:[animation-play-state:paused]"
-    >
-
-      {[...Array(2)].flatMap((_, repeatIndex) => {
-        const items = [
-          {
-            slug: "modern-trade-uplift",
-            title: "Modern Trade Uplift",
-            img: "/images/case-moderntrade.jpeg",
-            summary:
-              "Joint business planning + optimized planograms delivering 42% uplift in shelf share.",
-          },
-          {
-            slug: "digital-enablement-aarkay",
-            title: "Digital Enablement – Aarkay",
-            img: "/images/case-aarkay.jpg",
-            summary:
-              "Zoho + AI automation boosted CRM efficiency and improved lead conversions by 68%.",
-          },
-          {
-            slug: "d2c-phygital-cleanomatics",
-            title: "D2C Phygital – Cleanomatics",
-            img: "/images/case-cleanomatics.jpg",
-            summary:
-              "App-first CRM segmentation with hyper-personalized journeys and luxury collaborations.",
-          },
-          {
-            slug: "b2b-abm-engine",
-            title: "B2B ABM Engine",
-            img: "/images/case-abm.jpg",
-            summary:
-              "Account-based funnels with webinar touchpoints, SDR handoff & pipeline intelligence.",
-          },
-        ];
-
-        return items.map((item, i) => (
-          <Link
-            href={`/casestudies/${item.slug}`}
-            key={`${repeatIndex}-${i}`}
-            className="min-w-[360px] md:min-w-[400px] cursor-pointer select-none block"
-          >
-            {/* Card */}
-            <div
-              className="relative h-[480px] rounded-3xl overflow-hidden 
-                         border border-white/10 bg-[#101018]/80 backdrop-blur-xl
-                         shadow-[0_0_50px_rgba(0,255,255,0.06)]
-                         hover:shadow-[0_0_70px_rgba(0,255,255,0.18)]
-                         transition-all duration-700 group/card"
-            >
-
-              {/* Image */}
-              <div className="absolute inset-0">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover 
-                             transition-transform duration-[1800ms] 
-                             group-hover/card:scale-110"
-                />
-              </div>
-
-              {/* Glass Reflection */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover/card:opacity-100 
-                            transition-all duration-700 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(115deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 40%)",
-                }}
-              />
-
-              {/* Text Layer */}
-              <div
-                className="absolute bottom-0 inset-x-0 p-7
-                           bg-gradient-to-t from-black/80 via-black/40 to-transparent
-                           backdrop-blur-sm"
-              >
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-300 leading-snug mb-5">
-                  {item.summary}
-                </p>
-
-                {/* CTA Button */}
-                <div
-                  className="px-4 py-2 text-sm rounded-lg inline-block
-                             bg-gradient-to-r from-cyan-400/20 to-blue-400/20 
-                             text-cyan-300 border border-cyan-400/30 
-                             hover:from-cyan-400/30 hover:to-blue-400/30
-                             transition-all backdrop-blur-md"
-                >
-                  View Full Case Study →
-                </div>
-              </div>
-
-            </div>
-          </Link>
-        ));
-      })}
-    </div>
-  </div>
-
-  {/* Animation Keyframes */}
-  <style>{`
-    @keyframes scroll-premium {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-scroll-premium {
-      animation: scroll-premium 16s linear infinite;
-    }
-  `}</style>
-
-</section>
+      <PremiumCaseStudies />
 
 
 <section className="py-24 bg-[#0a0a0f]">
