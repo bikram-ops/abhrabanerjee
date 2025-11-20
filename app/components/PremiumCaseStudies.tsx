@@ -14,21 +14,21 @@ const caseItems: CaseItem[] = [
   {
     slug: "modern-trade-uplift",
     title: "Modern Trade Uplift",
-    img: "/images/case-moderntrade.jpeg",
+    img: "/casestudies/case-moderntrade.png",
     summary:
       "Joint business planning + optimized planograms delivering 42% uplift in shelf share.",
   },
   {
     slug: "digital-enablement-aarkay",
     title: "Digital Enablement – Aarkay",
-    img: "/images/case-aarkay.jpg",
+    img: "/casestudies/case-aarkay.png",
     summary:
       "Zoho + AI automation boosted CRM efficiency and improved lead conversions by 68%.",
   },
   {
     slug: "d2c-phygital-cleanomatics",
     title: "D2C Phygital – Cleanomatics",
-    img: "/casestudies/ecom.png",
+    img: "/casestudies/d2c.png",
     summary:
       "App-first CRM segmentation with hyper-personalized journeys and luxury collaborations.",
   },

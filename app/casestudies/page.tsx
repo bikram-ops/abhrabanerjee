@@ -55,7 +55,7 @@ export default function CaseStudiesPage() {
               className="group-hover:scale-[1.02] transition duration-300"
             >
               <Image
-                src="/images/case-moderntrade.jpeg"
+                src="/casestudies/case-moderntrade.png"
                 width={650}
                 height={450}
                 alt="Modern Trade Case"
@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
               className="order-1 md:order-2 group-hover:scale-[1.02] transition duration-300"
             >
               <Image
-                src="/images/case-aarkay.jpg"
+                src="/casestudies/case-aarkay.png"
                 width={650}
                 height={450}
                 alt="Aarkay Case"
@@ -145,7 +145,7 @@ export default function CaseStudiesPage() {
               className="group-hover:scale-[1.02] transition duration-300"
             >
               <Image
-                src="/images/case-cleanomatics.jpg"
+                src="/casestudies/d2c.png"
                 width={650}
                 height={450}
                 alt="Cleanomatics Case"
