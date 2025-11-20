@@ -45,7 +45,8 @@ export default function CaseStudiesPage() {
 
         {/* --- CASE 1 --- */}
         <Link href="/case-studies/modern-trade-uplift">
-          <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-14 items-center group cursor-pointer">
+<section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
+gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
             
             {/* IMAGE */}
             <motion.div
@@ -89,7 +90,8 @@ export default function CaseStudiesPage() {
 
         {/* --- CASE 2 (REVERSED) --- */}
         <Link href="/case-studies/digital-enablement-aarkay">
-          <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-14 items-center group cursor-pointer">
+<section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
+gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
             {/* CONTENT */}
             <motion.div
@@ -135,7 +137,8 @@ export default function CaseStudiesPage() {
 
         {/* --- CASE 3 --- */}
         <Link href="/case-studies/d2c-phygital-cleanomatics">
-          <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-14 items-center group cursor-pointer">
+<section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
+gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
             {/* IMAGE */}
             <motion.div
@@ -179,7 +182,8 @@ export default function CaseStudiesPage() {
 
         {/* --- CASE 4 (REVERSED) --- */}
         <Link href="/case-studies/b2b-abm-engine">
-          <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-14 items-center group cursor-pointer">
+<section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
+gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
             {/* CONTENT */}
             <motion.div
