@@ -631,7 +631,7 @@ export default function AbhraBanerjeePage() {
 {/* ✅ SERVICES SECTION */}
 <Section
   id="services"
-  className="py-20"
+  className="py-14 "
 >
   <motion.h2
     variants={fadeUp}
@@ -770,7 +770,7 @@ export default function AbhraBanerjeePage() {
       <PremiumCaseStudies />
 
 
-<section className="py-24 bg-[#0a0a0f]">
+<section className="py-20 bg-[#0a0a0f]">
   <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
     
     {/* LEFT COLUMN — HEADING + POINTS */}
@@ -866,7 +866,7 @@ export default function AbhraBanerjeePage() {
 
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 leading-snug">
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 leading-snug">
         Let’s Build Something Exceptional
       </h2>
 

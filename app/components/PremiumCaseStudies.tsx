@@ -95,8 +95,8 @@ export default function PremiumCaseStudies() {
   }, [isDragging, isHovered]);
 
   return (
-    <section id="cases" className="relative py-16 md:py-24 bg-transparent overflow-hidden">
-      <h2 className="text-3xl md:text-5xl font-extrabold mb-10 md:mb-14 text-center
+    <section id="cases" className="relative py-14 md:py-14 bg-transparent overflow-hidden">
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-10 md:mb-14 text-center
                      text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
         Selected Case Studies
       </h2>
