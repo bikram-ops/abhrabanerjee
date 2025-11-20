@@ -28,14 +28,14 @@ const caseItems: CaseItem[] = [
   {
     slug: "d2c-phygital-cleanomatics",
     title: "D2C Phygital – Cleanomatics",
-    img: "/images/case-cleanomatics.jpg",
+    img: "/casestudies/ecom.png",
     summary:
       "App-first CRM segmentation with hyper-personalized journeys and luxury collaborations.",
   },
   {
     slug: "b2b-abm-engine",
     title: "B2B ABM Engine",
-    img: "/images/case-abm.jpg",
+    img: "/casestudies/abm.png",
     summary:
       "Account-based funnels with webinar touchpoints, SDR handoff & pipeline intelligence.",
   },
