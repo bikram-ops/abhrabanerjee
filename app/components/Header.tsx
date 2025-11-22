@@ -71,13 +71,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-3 sm:py-4 flex items-center justify-between text-white">
 
         {/* LOGO */}
-        <button
-          onClick={() => window.location.href = "/"}
-          className="font-bold tracking-wide text-base sm:text-lg cursor-pointer"
-        >
-          <span className="md:hidden">ABHRA</span>
-          <span className="hidden md:inline">ABHRA BANERJEE</span>
-        </button>
+<button
+  onClick={() => window.location.href = "/"}
+  className="font-bold tracking-wide cursor-pointer text-lg sm:text-lg md:text-lg lg:text-lg"
+>
+  <span className="md:hidden text-xl sm:text-xl">ABHRA</span> {/* Slightly larger on mobile */}
+  <span className="hidden md:inline">ABHRA BANERJEE</span>   {/* Keep same on desktop */}
+</button>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex gap-6 text-sm">
