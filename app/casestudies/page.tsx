@@ -44,7 +44,7 @@ export default function CaseStudiesPage() {
       <div className="bg-[#0f131a] py-16 md:py-24 space-y-20 md:space-y-28">
 
         {/* --- CASE 1 --- */}
-        <Link href="/casestudies/modern-trade-uplift">
+        <Link href="/casestudies/rise-of-modern-retail">
 <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
 gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
             
