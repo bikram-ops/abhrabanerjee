@@ -54,3 +54,16 @@ body {
 .animate-tieShake {
   animation: tie-shake 1.2s infinite ease-in-out;
 }
+
+
+.mobile-active {
+  color: #3b82f6 !important; /* blue-400 */
+}
+
+.mobile-active-underline {
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  margin-top: 4px;
+  border-radius: 9999px;
+}

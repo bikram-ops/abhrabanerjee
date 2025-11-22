@@ -44,7 +44,7 @@ export default function CaseStudiesPage() {
       <div className="bg-[#0f131a] py-16 md:py-24 space-y-20 md:space-y-28">
 
         {/* --- CASE 1 --- */}
-        <Link href="/case-studies/modern-trade-uplift">
+        <Link href="/casestudies/modern-trade-uplift">
 <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
 gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
             
@@ -89,7 +89,7 @@ gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
         </Link>
 
         {/* --- CASE 2 (REVERSED) --- */}
-        <Link href="/case-studies/digital-enablement-aarkay">
+        <Link href="/casestudies/digital-enablement-aarkay">
 <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
 gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
@@ -136,7 +136,7 @@ gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
         </Link>
 
         {/* --- CASE 3 --- */}
-        <Link href="/case-studies/d2c-phygital-cleanomatics">
+        <Link href="/casestudies/d2c-phygital-cleanomatics">
 <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
 gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
@@ -181,7 +181,7 @@ gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
         </Link>
 
         {/* --- CASE 4 (REVERSED) --- */}
-        <Link href="/case-studies/b2b-abm-engine">
+        <Link href="/casestudies/b2b-abm-engine">
 <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 
 gap-12 md:gap-16 items-center group cursor-pointer py-6 md:py-10">
 
